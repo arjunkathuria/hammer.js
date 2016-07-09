@@ -93,7 +93,7 @@ QUnit.test( "Adding the same recognizer type should remove the old recognizer", 
  * - does not fire swipeleft or swiperight events
  */
 QUnit.test( "Swiping to the left should fire swipeleft event", function( assert ) {
-    var ready = assert.async();
+    var done = assert.async();
     assert.expect( 2 );
 
     hammer = new Hammer( el, { recognizers: [] } );
@@ -103,7 +103,7 @@ QUnit.test( "Swiping to the left should fire swipeleft event", function( assert 
     } );
 
     Simulator.gestures.swipe( el, { pos: [ 300, 300 ], deltaY: 0, deltaX: -200 }, function() {
-        ready();
+        done();
     } );
 } );
 
@@ -111,7 +111,7 @@ QUnit.test( "Swiping to the left should fire swipeleft event", function( assert 
  * Input target change
  */
 QUnit.test( "Should detect input while on other element", function( assert ) {
-    var ready = assert.async();
+    var done = assert.async();
     assert.expect( 1 );
 
     hammer = new Hammer( el, { inputTarget: document.body } );
@@ -120,7 +120,7 @@ QUnit.test( "Should detect input while on other element", function( assert ) {
     } );
 
     Simulator.gestures.tap( document.body, null, function() {
-        ready();
+        done();
     } );
 } );
 
