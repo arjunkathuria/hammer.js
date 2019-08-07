@@ -72,6 +72,7 @@
     "watch": "run-when-changed --watch 'src/**/*.js' --watch 'tests/unit/*.js' --watch 'tests/unit/gestures/*.js' --exec 'npm run watch-tasks'",
     "watch-tasks": "npm run rollup && npm run string-replace && npm run uglify && npm run jshint && npm run jscs",
     "build": "npm run rollup && npm run string-replace && npm run uglify && npm run bannerize",
-    "test": "npm run build && npm run jshint && npm run jscs && npm run qunit"
+      "test": "npm run build && npm run jshint && npm run jscs && npm run qunit",
+      "test_headless": "node ./test_headless.js"
   }
 }
